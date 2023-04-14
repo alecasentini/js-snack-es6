@@ -56,7 +56,7 @@ let squadre = [
     { nome: 'Bari', punti: 0, falli: 0 },
     { nome: 'Palermo', punti: 0, falli: 0 },
     { nome: 'Parma', punti: 0, falli: 0 },
-    { nome: 'Vicenza', punti: 0, falli: 0 }
+    { nome: 'LR Vicenza', punti: 0, falli: 0 }
   ];
   
 //creo una funzione per generare numero di punti e falli randomica
@@ -70,4 +70,8 @@ function generaNumeriCasuali(squadra) {
 
 squadre = squadre.map(generaNumeriCasuali);
 
-console.log(squadre);
+let squadreFalliSubiti = squadre.map(({nome, falli}) => ({nome, falli}));
+
+console.log(squadre)
+console.log(squadreFalliSubiti);
+
