@@ -59,3 +59,15 @@ let squadre = [
     { nome: 'Vicenza', punti: 0, falli: 0 }
   ];
   
+//creo una funzione per generare numero di punti e falli randomica
+function generaNumeriCasuali(squadra) {
+    return {
+        nome: squadra.nome,
+        punti: Math.floor(Math.random() * 100),
+        falli: Math.floor(Math.random() * 500)
+    };
+}
+
+squadre = squadre.map(generaNumeriCasuali);
+
+console.log(squadre);
