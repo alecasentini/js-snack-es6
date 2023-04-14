@@ -24,3 +24,7 @@ for (let i = 1; i < biciclette.length; i++) {
 }
 
 const { nome, peso } = biciLeggera;
+
+// Stampo la bici leggera a schermo
+const pesoMinore = document.getElementById("peso-minore");
+pesoMinore.innerHTML = `La bici più leggera è la ${nome}, che pesa solo ${peso} kg!`;
