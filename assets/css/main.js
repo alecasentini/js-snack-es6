@@ -100,4 +100,9 @@ function valoreIntermedio(array, a, b) {
 }
 
 const risultato = valoreIntermedio(nomi, 0, 4);
+
+console.log(nomi)
 console.log(risultato)
+
+// stampa a schermo
+document.getElementById("nomi").innerText = risultato.join(", ");
