@@ -28,6 +28,7 @@ const { nome, peso } = biciLeggera;
 // Stampo la bici leggera a schermo
 const pesoMinore = document.getElementById("peso-minore");
 pesoMinore.innerHTML = `La bici più leggera è la ${nome}, che pesa solo ${peso} kg!`;
+console.log(biciclette)
 
 //========================================================================================
 /*     Snack 2
@@ -74,6 +75,36 @@ let squadreFalliSubiti = squadre.map(({nome, falli}) => ({nome, falli}));
 
 console.log(squadre)
 console.log(squadreFalliSubiti);
+
+// Selezioniamo l'elemento HTML in cui vogliamo inserire la tabella
+const classifica = document.querySelector('#classifica');
+
+// Ordiniamo l'array nomiFalliSubiti in base ai falli subiti in ordine decrescente
+squadreFalliSubiti.sort((a, b) => b.falli - a.falli);
+
+// Creiamo la tabella HTML
+const tableHTML = `
+  <table>
+    <thead>
+      <tr>
+        <th>Squadra</th>
+        <th>Falli subiti</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${squadreFalliSubiti.map(({ nome, falli }) => `
+        <tr>
+          <td>${nome}</td>
+          <td class="text-center">${falli}</td>
+        </tr>
+      `).join('')}
+    </tbody>
+  </table>
+`;
+
+// Inseriamo la tabella nella pagina HTML
+classifica.innerHTML = tableHTML;
+
 
 //========================================================================================
 /*      Snack 3
